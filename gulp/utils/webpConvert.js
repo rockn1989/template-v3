@@ -7,7 +7,7 @@ const webpConvert = () => {
   return gulp
     .src("./assets/img/webp/*.{png,jpg,gif}")
     .pipe(webp())
-    .pipe(gulp.dest("./dist/img/webp/"));
+    .pipe(gulp.dest("./assets/img/media/webp/"));
 };
 
 /**
@@ -15,7 +15,7 @@ const webpConvert = () => {
  */
 const cleanFolder = () => {
   return gulp
-    .src("./dist/img/webp", { allowEmpty: true })
+    .src("./assets/img/media/webp", { allowEmpty: true })
     .pipe(clean({ read: false }));
 };
 
