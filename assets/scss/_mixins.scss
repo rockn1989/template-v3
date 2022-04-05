@@ -3,3 +3,13 @@
   padding: 0;
   list-style: none;
 }
+
+@mixin adpFont($minFz, $minLh, $maxFz, $maxLh, $minVw, $maxVw) {
+  font-size: calc(#{$minFz}px + (#{$maxFz} - #{$minFz}) * ((100vw - #{$minVw}px) / (#{$maxVw} - #{$minVw})));
+  line-height: calc(#{$minLh}px + (#{$maxLh} - #{$minLh}) * ((100vw - #{$minVw}px) / (#{$maxVw} - #{$minVw})));
+
+  @media (min-width: #{$maxVw}px) {
+    font-size: #{$maxFz}px;
+    line-height: #{$maxLh}px;
+  }
+}
